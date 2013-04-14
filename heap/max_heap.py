@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
-class heap:
+class heap(object):
     """heap"""
     def __init__(self, array):
         self.array = array
@@ -38,6 +38,9 @@ class heap:
         print ' '.join(tmp)    
 
 class max_heap(heap):
+    def __init__(self, array):
+        super(max_heap, self).__init__(array)
+        
     def max_heapify(self, i):
         if i == -1:
             return
@@ -64,7 +67,7 @@ class max_heap(heap):
 
     def build_max_heap(self):
         for i in range(0, self.size/2):
-            print i
+            # print i
             self.max_heapify(i)
 
     def heap_sort(self):
